@@ -18,7 +18,7 @@ the Kubernetes user interface, then you should create a user account for them.
     - So for this microservice or application to run on Kubernetes, just like how a user has user account, this service should have a service account by user requires permission to do something on Kubernetes.
     - Similarly, service also requires permission to do something on Kubernetes and that permission comes through the service account.
     
-    ![service-accounts](images/image-11.png)
+    ![service-accounts](/notes/images/image-11.png)
 
 
     - So whenever we usually run demo projects on Kubernetes for practice, we usually don't assign a service account to the pods that we are deploying.

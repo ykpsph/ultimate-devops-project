@@ -7,13 +7,13 @@
 
 - right now kubectl says the list of clusters information that I have is null. That means I don't have any information of the context. If you give me the Kubernetes clusters then I can connect to it.
 
-![kubectl config view](images/image4.png)
+![kubectl config view](/notes/images/image4.png)
 
 - the command below tells from all the clusters we have which one we currently have connected.
-![kubectl config current-context](images/image5.png)
+![kubectl config current-context](/notes/images/image5.png)
 
 - if you want to switch between clusters you run this command : >_ kubectl config use-context <cluster-context-name>
-![switch context](images/image-10.png)
+![switch context](/notes/images/image-10.png)
 
 ## Configure EKS
 - we have to use aws configure command to configure our EKS 
@@ -21,15 +21,15 @@
 - you need to pass credentials
 context is nothing but kubernetes related information
 
-![update-kubeconfig](images/image-6.png)
+![update-kubeconfig](/notes/images/image-6.png)
 
 if you run kubectl config view : you can see everyhing about your EKS cluster
-![kubectl config view](images/image-7.png)
+![kubectl config view](/notes/images/image-7.png)
 
 - this is what you'll see in your local
 
-![alt text](images/image-8.png)
+![alt text](/notes/images/image-8.png)
 
 - if you're using EKS, then you'll see
 
-![alt text](images/image-9.png)
+![alt text](/notes/images/image-9.png)
