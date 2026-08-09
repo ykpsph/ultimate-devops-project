@@ -52,3 +52,62 @@ Developer → GitHub → Test → Build → Image → Push
                                              ↓
                                             Pods
 ```
+
+# GitHub Actions nedir ?
+- CI pipeline'ın hangi zamanda ve hangi adımlarla çalışacağını yöneten sistem
+
+> GitHub Actions workflow'u nereden biliyor ? 
+- .github/workflows/ci.yaml
+
+
+## ci.yaml ne ?
+- pipeline'ın talimatları gibi düşün
+
+```yaml
+name: Product Catalog CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    ...
+```
+- name : workflow'un adı
+- on : workflow ne zaman çalışacak ?
+- jobs : workflow hangi işleri yapacak ?
+
+
+### Workflow ve Action aynı şey değil
+- workflow senin oluşturduğun *ci.yaml* dosyası
+- action ise workflow'un içinde kullandığın hazır parçalar
+```yaml
+Workflow
+│
+├── checkout action
+├── Go setup action
+├── Docker action
+└── ...
+```
+and
+```yaml
+Workflow
+│
+├── Build Job
+│    ├── Checkout
+│    ├── Install Go
+│    ├── Build
+│    └── Unit Tests
+│
+├── Static Analysis Job
+│    ├── Checkout
+│    └── Static Analysis
+│
+└── Docker Job
+     ├── Docker Build
+     ├── Docker Scan
+     └── Docker Push
+```
+### Runner nedir ?
+- Senin workflow'unun çalışması için GitHub'ın sağladığı bir VM
