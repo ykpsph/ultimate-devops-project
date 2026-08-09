@@ -36,11 +36,19 @@ Update Kubernetes manifest
 ### Peki CD ne yapıyor?
 - CD'nin amacı: Yeni image'ı Kubernetes cluster'a deploy etmek.
 ```
-Kubernetes manifest
-        ↓
-        CD
-        ↓
-      ArgoCD
-        ↓
-Kubernetes Cluster
+                    CI                         CD
+                    │                          │
+Developer → GitHub → Test → Build → Image → Push
+                                             │
+                                             ↓
+                                      Update K8s manifest
+                                             │
+                                             ↓
+                                           Argo CD
+                                             │
+                                             ↓
+                                          EKS/K8s
+                                             │
+                                             ↓
+                                            Pods
 ```
